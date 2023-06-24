@@ -1,0 +1,130 @@
+*{
+    margin:0;
+}
+
+.dropdown{
+    width:100%;
+}
+
+.product img{
+    width: 10rem;
+    height: 15rem;
+    object-fit: cover;
+    border: solid 3px black;
+    padding: 3px;
+    background-color: white;
+}
+
+.searchbar{
+    grid-area: searchbar;
+    display:flex;
+    justify-content: center;
+    padding:1rem;
+    background-color: black;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+}
+
+.navbar{
+    grid-area:navbar;
+}
+#logo{
+    max-width: 1rem;
+    max-height: 1rem;
+    margin-top: 0.25rem;
+}
+.menu_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_top_left{
+    display: flex;
+    padding:0;
+  }
+  
+  .menu_top_right{
+margin-left: auto;
+  }
+
+.menu{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: flex-start;
+    margin-top: 1rem;
+}
+
+.footer{
+    grid-area: footer;
+    display:flex;
+    justify-content: center;
+    padding:2rem;
+    background-color: black;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box{
+    border: solid 1px black;
+}
+
+.product{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    padding:0.5rem;
+    max-width: 12rem;
+}
+
+@media (max-width: 576px){
+    .main{
+        grid-area: main;
+        display:grid;
+        grid-template-columns: auto;
+        grid-gap:10px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        overflow-y:scroll;
+        justify-content: center;
+    }
+    .grid-container{
+        display:grid;
+        grid-template-areas:
+        'navbar'
+        'searchbar'
+        'main'
+        'footer';
+    }
+    .menu{
+        display:none;
+    }
+
+}
+@media (min-width: 576px){
+    .main{
+        grid-area: main;
+        display:grid;
+        grid-template-columns: auto auto auto;
+        grid-gap:10px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        overflow-y:scroll;
+    }
+    .grid-container{
+        display:grid;
+        grid-template-areas:
+        'navbar searchbar'
+        'navbar main'
+        'footer main';
+        grid-template-columns: 1fr 7fr;
+        grid-template-rows: 1fr 5fr 1fr;
+        column-gap: 20px;
+    }
+
+    .menu_top_right{
+        display: none;
+    }
+}
